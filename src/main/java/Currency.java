@@ -5,7 +5,7 @@ public class Currency {
         Input input = new Input();
         input.main();
         Conversion conv = new Conversion();
-        conv.main();
+        conv.main(input.euros, input.rate);
 
         System.out.printf("%.2f euros at an exchange rate of %.2f is\n%.2f U.S. dollars.", input.euros, input.rate, conv.dollars);
     }
@@ -30,8 +30,7 @@ class Conversion{
 
     double dollars ;
 
-    public void main() {
-        Input input = new Input();
-        this.dollars = input.euros * (input.rate * 0.01);
+    public void main(double euros, double rate) {
+        this.dollars = euros * (rate * 0.01);
     }
 }
